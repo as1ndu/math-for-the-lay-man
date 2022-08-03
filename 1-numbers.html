@@ -1,0 +1,855 @@
+<div align="center">
+    <h3><a name="1: Numbers"></a><a href="#MATH">1: Numbers</a></h3>
+</div>
+
+<a href="#1A.">1A. The Counting (Natural) Numbers</a>
+<p>
+    <a href="#1B.">1B. Lists and Names</a>
+<p>
+    <a href="#1C.">1C. Iteration (Repetition)</a>
+<p>
+    <a href="#1D.">1D. Inverse</a>
+<p>
+    <a href="#1E.">1E. Addition and Subtraction (+ and -)</a>
+<p>
+    <a href="#1F.">1F. Bonding<p>
+            <a href="#1G.">1G. Multiplication or Times (*)<p>
+
+                    <a href="#1H.">1H. Power and Exponent (^)<p>
+                            <a href="#1I.">1I. Monomials and Polynomials (p.)<p>
+                                    <a href="#1J.">1J. Division (%)<p>
+                                            <a href="#1K.">1K. Review and Supplement<p>
+                                                    <a href="#1L.">1L. Notes<p>
+
+
+                                                            <a name="1A."></a>
+                                                            <h3><a href="#1: Numbers">1A. The Counting (Natural)
+                                                                    Numbers</a>
+                                                                <a href="#S1A.">
+                                                                    <font size="-1">S1A.</font>
+                                                                </a>
+                                                            </h3>
+
+
+                                                            The <i>Counting numbers</i> begin with <code>1 2 3 4</code>
+                                                            and go on forever, because every
+                                                            counting number has a <i>successor</i> that comes next after
+                                                            it. Thus:
+                                                            <pre>
+ &gt;: 1
+2
+ &gt;: 2
+3
+ &gt;: 3
+4
+ &gt;: 4
+5
+ &gt;: &gt;: 1
+3
+ &gt;: &gt;: &gt;: &gt;: 2
+6
+
+ &gt;: 1 2 3 4 5 6
+2 3 4 5 6 7</pre>
+                                                            <p><code>&gt;:</code> "performs an action" upon the number
+                                                                to which
+                                                                it is applied, and is therefore analogous to an "action
+                                                                word" or
+                                                                <i>verb</i> in
+                                                                English. In math, such a verb is also called a
+                                                                <i>function</i> (from
+                                                                Latin <i>fungi</i>, to perform or execute).
+                                                            <p>The number to which a verb applies may be called a
+                                                                <i>noun</i>. In
+                                                                math it is also called an <i>argument</i>, in the sense
+                                                                of a
+                                                                <i>topic</i> or <i>subject</i> ("You and love are still
+                                                                my
+                                                                argument" -- Shakespeare).
+
+
+
+                                                                <a name="1B."></a>
+                                                            <h3><a href="#1: Numbers">1B. Lists and Names</a>
+                                                                <a href="#S1B.">
+                                                                    <font size="-1">S1B.</font>
+                                                                </a>
+                                                            </h3>
+                                                            A collection of numbers may be written as a <i>list</i>, in
+                                                            the form <code>2 3 5 7 11</code>, and verbs may be applied
+                                                            to
+                                                            such lists. For example:
+                                                            <pre>   &gt;: 2 3 5 7 11
+3 4 6 8 12
+ &gt;: &gt;: &gt;: 2 3 5 7 11
+5 6 8 10 14</pre>
+                                                            A <i>name</i> may be assigned to a number or list by using
+                                                            the <i>copula</i> <code>=:</code>, and the name may then be
+                                                            used
+                                                            to refer to its <i>referent</i>. For example:
+                                                            <pre>   primes=: 2 3 5 7 11
+ &gt;: primes
+3 4 6 8 12
+ b=: &gt;: primes
+ &gt;: &gt;: b
+5 6 8 10 14</pre>
+                                                            The main copulas used in English are "is" and "are". They
+                                                            may
+                                                            be used in reading mathematical expressions aloud, as in
+                                                            "primes are
+                                                            <code>2 3 5 7 11</code>"
+                                                            for <code>primes=:2 3 5 7 11</code>, and "first is one" for
+                                                            <code>first=:1</code>.
+
+
+                                                            <p>Names may also be assigned to verbs. There appears to be
+                                                                no
+                                                                English word that corresponds to <code>&gt;:</code>
+                                                                except, perhaps,
+                                                                the command "next" used to summon a successor from a
+                                                                queue.
+                                                                Thus:
+                                                            <pre>   next=: &gt;:
+ next 5
+6
+ next next 5
+7</pre>
+
+                                                            <a name="1C."></a>
+                                                            <h3><a href="#1: Numbers">1C. Iteration (Repetition)</a>
+                                                                <a href="#S1C.">
+                                                                    <font size="-1">S1C.</font>
+                                                                </a>
+                                                            </h3>
+                                                            The expression <code>next ^: 3</code> produces a verb that
+                                                            is
+                                                            equivalent to applying the verb <CODE>next</code> <b>for</b>
+                                                            three
+                                                            times.
+                                                            Thus:
+                                                            <pre>   primes
+2 3 5 7 11
+ next ^: 3 primes
+5 6 8 10 14
+ next next next primes
+5 6 8 10 14
+ for=: ^:
+
+ next for 3 primes
+5 6 8 10 14
+ list=: 1 2 3 4
+ next for list primes
+3 4 6  8 12
+4 5 7  9 13
+5 6 8 10 14
+6 7 9 11 15</pre>
+
+
+                                                            <h3><a name="1D."></a>
+                                                                <a href="#1: Numbers">1D. Inverse</a>
+                                                                <a href="#S1D.">
+                                                                    <font size="-1">S1D.</font>
+                                                                </a>
+                                                            </h3>
+                                                            The verb <code>previous=: &lt;:</code> "undoes" the work of
+                                                            the verb
+                                                            <code>next=: &gt;:</code>,
+                                                            and is said to be its <i>inverse</i>. Thus:
+                                                            <pre>   previous=: &lt;:
+
+ primes
+2 3 5 7 11
+ previous primes
+1 2 4 6 10
+ next previous primes
+2 3 5 7 11
+ previous next primes
+2 3 5 7 11
+ previous 3
+2
+ previous 2
+1
+ previous 1
+0
+ previous 0
+_1
+ previous _1
+_2
+</pre>
+
+
+                                                            <p>Because <code>1</code> is the <b>first</b>
+                                                                counting number, the zero (<code>0</code>)
+                                                                and the negative numbers (<code>_1</code> and
+                                                                <code>_2</code>)
+                                                                shown above are not counting numbers. But they are
+                                                                <i>integers</i>,
+                                                                so called because they are unbroken or intact (in=not,
+                                                                tag=touch), as
+                                                                distinguished from the <i>fractions</i> (broken or
+                                                                fractured)
+                                                                referred
+                                                                to in the preface.
+                                                            <p>Adopting the seemingly-innocent notion of a verb that
+                                                                undoes the
+                                                                effect of <code>next</code> has, rather surprisingly,
+                                                                led us out of the original domain
+                                                                of counting numbers, and forced the adoption of a
+                                                                broader class,
+                                                                the <i>integers</i>, that includes the zero and negative
+                                                                numbers.
+                                                            <p>In adopting further inverses we will again experience the
+                                                                same need to broaden our domain, to include
+                                                                <i>rational</i>
+                                                                numbers, and <i>imaginary</i> numbers. Moreover, the
+                                                                surprising
+                                                                effect of inverse processes is not confined to
+                                                                mathematics.
+                                                            <p>Consider the effect of reversing a movie projector to run
+                                                                a
+                                                                film backward. If the film shows a locomotive moving
+                                                                forward
+                                                                along a track, the result of reversal is unremarkable.
+                                                                But if
+                                                                it concerns the dropping of an egg on the pavement, or a
+                                                                dive
+                                                                from a diving-board, the result is a startling
+                                                                illustration
+                                                                of the important distinction between <i>reversible</i>
+                                                                and
+                                                                <i>irreversible</i> processes.
+
+                                                            <p>Finally, the inverse of a function can be obtained by
+                                                                using
+                                                                iteration (<code>for</code>) with the right argument
+                                                                <code>_1</code>.
+                                                                Thus:
+                                                            <pre>   next for _1 primes
+1 2 4 6 10
+ &gt;: ^: _1 primes
+1 2 4 6 10
+ &gt;: ^: _1
+&lt;:
+ next for _3 _2 _1 0 1 2 3 primes
+_1 0 2  4  8
+0 1 3  5  9
+1 2 4  6 10
+2 3 5  7 11
+3 4 6  8 12
+4 5 7  9 13
+5 6 8 10 14</pre>
+
+
+                                                            <a name="1E."></a>
+                                                            <h3><a href="#1: Numbers">1E. Addition and Subtraction (+
+                                                                    and -)</a>
+                                                                <a href="#S1E.">
+                                                                    <font size="-1">S1E.</font>
+                                                                </a>
+                                                            </h3>
+                                                            The effect of the verb <code>next for 3</code> is to
+                                                            <i>add</i>
+                                                            <code>3</code> to its argument, and
+                                                            <code>next for 3 primes</code>
+                                                            is equivalent to the addition <code>primes + 3</code> (using
+                                                            the familiar Saint George's cross to denote the verb). Thus:
+                                                            <pre>   next for 3 primes
+5 6 8 10 14
+ primes + 3
+5 6 8 10 14
+ 0 1 2 3 4 5 + 0 1 2 3 4 5
+0 2 4 6 8 10
+ + table 0 1 2 3 4 5
++-+------------+
+| |0 1 2 3 4  5|
++-+------------+
+|0|0 1 2 3 4  5|
+|1|1 2 3 4 5  6|
+|2|2 3 4 5 6  7|
+|3|3 4 5 6 7  8|
+|4|4 5 6 7 8  9|
+|5|5 6 7 8 9 10|
++-+------------+</pre>
+                                                            The last result is an <i>addition table</i>, which may be
+                                                            "read"
+                                                            as follows: <blockquote>
+                                                                To find the result of <code>3 + 4</code>, choose the
+                                                                result
+                                                                (<code>7</code>)
+                                                                found in the row headed by <code>3</code> and the column
+                                                                headed by <code>4</code>.</blockquote>
+                                                            The verb <code>+ table</code> is only one example of a
+                                                            <i>function</i>
+                                                            table, and other functions may be used. For example:
+                                                            <pre>   previous for 3 primes
+_1 0 2 4 8
+ primes - 3
+_1 0 2 4 8
+
+ - table 0 1 2 3 4 5
++-+----------------+
+| |0  1  2  3  4  5|
++-+----------------+
+|0|0 _1 _2 _3 _4 _5|
+|1|1  0 _1 _2 _3 _4|
+|2|2  1  0 _1 _2 _3|
+|3|3  2  1  0 _1 _2|
+|4|4  3  2  1  0 _1|
+|5|5  4  3  2  1  0|
++-+----------------+</pre>
+                                                            <b>
+                                                                <div align="center">Exercises</div>
+                                                            </b>
+                                                            <ol>
+                                                                <li>Read
+                                                                    from the addition table the sums <code>2 + 5</code>
+                                                                    and
+                                                                    <code>5 + 2</code>
+                                                                    and verify that they agree. Make similar comparisons
+                                                                    of additions
+                                                                    of numbers that are similarly interchanged or
+                                                                    <i>commuted.</i>
+                                                                    <p>
+                                                                <li>Because
+                                                                    of the agreements noted in Exercise 1, addition is
+                                                                    said to
+                                                                    be <i>commutative</i>. Use the subtraction table to
+                                                                    find
+                                                                    whether subtraction is commutative.
+                                                            </ol>
+
+
+                                                            <a name="1F."></a>
+                                                            <h3><a href="#1: Numbers">1F. Bonding (&amp;)</a>
+                                                                <a href="#S1F.">
+                                                                    <font size="-1">S1F.</font>
+                                                                </a>
+                                                            </h3>
+
+                                                            The verb <code>+ &amp; 3</code> is equivalent to "add
+                                                            <code>3</code>",
+                                                            that is, to <code>next for 3</code>. Thus:
+                                                            <pre>   + &amp; 3 primes
+5 6 8 10 14
+ primes + 3
+5 6 8 10 14
+
+ with=: &amp;
+ + with 3 primes
+5 6 8 10 14
+ next for 3 primes
+5 6 8 10 14
+
+ - with 3 primes
+_1 0 2 4 8
+ primes - 3
+_1 0 2 4 8
+
+ - with 3 + with 3 primes
+2 3 5 7 11
+ + with 2 primes
+4 5 7 9 13
+ + with 2 for 0 1 2 3 4 primes
+2  3  5  7 11
+4  5  7  9 13
+6  7  9 11 15
+8  9 11 13 17
+10 11 13 15 19</pre>
+                                                            Although the referent of <code>primes</code> is the list
+                                                            <code>2 3 5 7 11</code>, it would not be correct to
+                                                            substitute the
+                                                            referent for the name in the foregoing
+                                                            expression, because the resulting
+                                                            <code>0 1 2 3 4 2 3 5 7 11</code>
+                                                            would be treated as a single list argument to
+                                                            <code>for</code>.
+                                                            Thus:
+                                                            <pre>   + with 2 for 0 1 2 3 4 2 3 5 7 11
++&amp;2^:0 1 2 3 4 2 3 5 7 11</pre>
+                                                            The lists may, however, be separated by parentheses:
+                                                            <pre>   + with 2 for 0 1 2 3 4 (2 3 5 7 11)
+2  3  5  7 11
+4  5  7  9 13
+6  7  9 11 15
+8  9 11 13 17
+10 11 13 15 19</pre>
+
+
+                                                            <a name="1G."></a>
+                                                            <h3><a href="#1: Numbers">1G. Multiplication or Times
+                                                                    (*)</a>
+                                                                <a href="#S1G.">
+                                                                    <font size="-1">S1G.</font>
+                                                                </a>
+                                                            </h3>
+
+                                                            Three times four <code>(3 * 4)</code>
+                                                            is said to be the addition of four copies ("plies") of
+                                                            three. Thus:
+                                                            <pre>   3 + 3 + 3 + 3
+12
+ 3 * 4
+12
+ * table 0 1 2 3 4 5 6 7 8 9 10
++--+--------------------------------+
+|  |0  1  2  3  4  5  6  7  8  9  10|
++--+--------------------------------+
+| 0|0  0  0  0  0  0  0  0  0  0   0|
+| 1|0  1  2  3  4  5  6  7  8  9  10|
+| 2|0  2  4  6  8 10 12 14 16 18  20|
+| 3|0  3  6  9 12 15 18 21 24 27  30|
+| 4|0  4  8 12 16 20 24 28 32 36  40|
+| 5|0  5 10 15 20 25 30 35 40 45  50|
+| 6|0  6 12 18 24 30 36 42 48 54  60|
+| 7|0  7 14 21 28 35 42 49 56 63  70|
+| 8|0  8 16 24 32 40 48 56 64 72  80|
+| 9|0  9 18 27 36 45 54 63 72 81  90|
+|10|0 10 20 30 40 50 60 70 80 90 100|
++--+--------------------------------+
+</pre>
+                                                            <b>
+                                                                <div align="center">Exercises</div>
+                                                            </b>
+                                                            <ol>
+                                                                <li>Study
+                                                                    the multiplication table, and comment on its
+                                                                    properties (such
+                                                                    as commutativity).<p>
+                                                                <li>The numbers in column <code>5</code> are
+                                                                    <i>multiples</i> of <code>5</code>, that is, they
+                                                                    result
+                                                                    from multiplying by <code>5</code>. Verify that they
+                                                                    progress
+                                                                    by "counting by fives", and check for similar
+                                                                    properties in other
+                                                                    columns and rows.<p>
+                                                                <li>Comment on any patterns you find in the rows,
+                                                                    columns, or diagonals of other function tables.<p>
+                                                                <li>Make
+                                                                    the table <code>* table 2 3 4 5 6 6 7 8 9 10</code>
+                                                                    and make
+                                                                    a list of the counting numbers beginning with
+                                                                    <code>2</code> (and
+                                                                    up to perhaps <code>19</code>)
+                                                                    that <i>do not</i> occur in it. These numbers are
+                                                                    called
+                                                                    <i>primes</i>.
+                                                            </ol>
+
+
+                                                            <h3><a name="1H."></a>
+                                                                <a href="#1: Numbers">1H. Power and Exponent (^)</a>
+                                                                <a href="#S1H.">
+                                                                    <font size="-1">S1H.</font>
+                                                                </a>
+                                                            </h3>
+
+                                                            Just as repeated application of addition is equivalent to
+                                                            another important function
+                                                            (multplication, or <code>*</code>),
+                                                            so repeated multiplication is equivalent to <i>power</i>, or
+                                                            <code>^ </code>. Thus,
+                                                            <code>3 ^ 4</code> is equivalent to
+                                                            <code>3 * 3 * 3 * 3</code>.
+                                                            The right argument (in this case <code>4</code>)
+                                                            is often called the <i>exponent</i>, and the
+                                                            expression <code>3 ^ 4</code> is read as "three power
+                                                            four" or "three to the power four". For example:
+                                                            <pre>
+ 3 ^ 4
+81
+ 3*3*3*3
+81
+ 0 1 2 3 4 5 ^2
+0 1 4 9 16 25
+
+ ^ table 0 1 2 3 4 5
++-+-------------------+
+| |0 1  2   3   4    5|
++-+-------------------+
+|0|1 0  0   0   0    0|
+|1|1 1  1   1   1    1|
+|2|1 2  4   8  16   32|
+|3|1 3  9  27  81  243|
+|4|1 4 16  64 256 1024|
+|5|1 5 25 125 625 3125|
++-+-------------------+</pre>
+
+
+                                                            <h3><a name="1I."></a>
+                                                                <a href="#1: Numbers">1I. Monomials and Polynomials
+                                                                    (p.)</a>
+                                                                <a href="#S1I.">
+                                                                    <font size="-1">S1I.</font>
+                                                                </a>
+                                                            </h3>
+
+                                                            An expression such as <code>5*4^3</code> is called a
+                                                            <i>monomial</i>
+                                                            (one name) with the
+                                                            <i>coefficient</i> <code>5</code>, the argument
+                                                            <code>4</code>,
+                                                            and the exponent
+                                                            <code>3</code>; a sum of monomials is called
+                                                            a <i>polynomial</i> (many names). For example:
+                                                            <pre>   5 * 4 ^ 3
+320
+
+ (5*4^3) + (_2*4^4) + (1*4^1)
+_288</pre>
+                                                            <p>
+                                                                A polynomial in which the exponents in the
+                                                                successive monomials are successive
+                                                                integers beginning with zero, is said to be
+                                                                in <i>standard form</i>, and may be expressed
+                                                                using the polynomial function <code>p.</code>, with the
+                                                                list of coefficients as the left argument.
+                                                                For example:
+                                                            <pre>
+ x=:  4
+ (2*x^0) + (3*x^1) + (4*x^2)
+78
+ 2 3 4 p. x
+78</pre>
+                                                            <b>
+                                                                <div align="center">Exercises</div>
+                                                            </b>
+                                                            <ol>
+                                                                <p>
+                                                                    <lI>
+                                                                        Evaluate the following expressions, and comment
+                                                                        on the results:
+                                                                        <pre>   a=: 0 1 2 3 4 5
+ 1 2 1 p. a
+ (a+1) ^ 2
+ 1 3 3 1 p. a
+ (a+1) ^ 3
+ c4=: 0 1 3 3 1 + 1 3 3 1 0
+ c4 p. a
+ (a+1) ^ 4</pre>
+                                                            </ol>
+
+
+                                                            <h3><a name="1J."></a>
+                                                                <a href="#1: Numbers">1J. Division (%)</a>
+                                                                <a href="#S1J.">
+                                                                    <font size="-1">S1J.</font>
+                                                                </a>
+                                                            </h3>
+
+                                                            Division (to be denoted by <code>%</code>) "undoes" the work
+                                                            of
+                                                            multiplication. For example:
+                                                            <pre>   a=: 0 1 2 3 4 5 6
+ b=: a * 2
+ b
+0 2 4 6 8 10 12
+ b % 2
+0 1 2 3 4 5 6
+ b % 3
+0 0.666667 1.33333 2 2.66667 3.33333 4</pre>
+                                                            Just as the inverse of addition introduced new numbers
+                                                            outside the domain of the counting numbers, so
+                                                            some of the results of this inverse function
+                                                            lie outside of the domain of integers. These non-integral
+                                                            results (such as <code>0.666667</code>) are "decimal
+                                                            approximations to"
+                                                            a new class of numbers, called <i>fractions</i> or
+                                                            <i>rationals</i>.
+                                                            <p>Just as we introduced a way to represent negative
+                                                                numbers, so
+                                                                we introduce a representation for rationals:
+                                                                <code>2r3</code> for
+                                                                the fraction two-thirds, <code>4r3</code> for the
+                                                                fraction
+                                                                four-thirds,
+                                                                etc. Thus:
+                                                            <pre>   1r3+1r3
+2r3
+ a=: 0 1r2 1r3 1r4 1r5 1r6
+
+ a+a
+0 1 2r3 1r2 2r5 1r3
+ a-a
+0 0 0 0 0 0
+ a * a
+0 1r4 1r9 1r16 1r25 1r36
+
+ + table a
++---+------------------------------+
+|   |  0  1r2  1r3  1r4   1r5   1r6|
++---+------------------------------+
+|  0|  0  1r2  1r3  1r4   1r5   1r6|
+|1r2|1r2    1  5r6  3r4  7r10   2r3|
+|1r3|1r3  5r6  2r3 7r12  8r15   1r2|
+|1r4|1r4  3r4 7r12  1r2  9r20  5r12|
+|1r5|1r5 7r10 8r15 9r20   2r5 11r30|
+|1r6|1r6  2r3  1r2 5r12 11r30   1r3|
++---+------------------------------+
+
+ - table a
++---+--------------------------------+
+|   |  0   1r2   1r3   1r4   1r5  1r6|
++---+--------------------------------+
+|  0|  0  _1r2  _1r3  _1r4  _1r5 _1r6|
+|1r2|1r2     0   1r6   1r4  3r10  1r3|
+|1r3|1r3  _1r6     0  1r12  2r15  1r6|
+|1r4|1r4  _1r4 _1r12     0  1r20 1r12|
+|1r5|1r5 _3r10 _2r15 _1r20     0 1r30|
+|1r6|1r6  _1r3  _1r6 _1r12 _1r30    0|
++---+--------------------------------+
+
+ * table a
++---+--------------------------+
+|   |0  1r2  1r3  1r4  1r5  1r6|
++---+--------------------------+
+|  0|0    0    0    0    0    0|
+|1r2|0  1r4  1r6  1r8 1r10 1r12|
+|1r3|0  1r6  1r9 1r12 1r15 1r18|
+|1r4|0  1r8 1r12 1r16 1r20 1r24|
+|1r5|0 1r10 1r15 1r20 1r25 1r30|
+|1r6|0 1r12 1r18 1r24 1r30 1r36|
++---+--------------------------+
+
+ % table a
++---+---------------------+
+|   |0 1r2 1r3 1r4 1r5 1r6|
++---+---------------------+
+|  0|0   0   0   0   0   0|
+|1r2|_   1 3r2   2 5r2   3|
+|1r3|_ 2r3   1 4r3 5r3   2|
+|1r4|_ 1r2 3r4   1 5r4 3r2|
+|1r5|_ 2r5 3r5 4r5   1 6r5|
+|1r6|_ 1r3 1r2 2r3 5r6   1|
++---+---------------------+
+</pre>
+                                                            <b>
+                                                                <div align="center">Exercises</div>
+                                                            </b>
+                                                            <ol>
+                                                                <li>Study the foregoing tables,
+                                                                    and comment on their properties. (See the Exercises
+                                                                    in Section
+                                                                    1G.)<p>
+                                                                <li>
+                                                                    Comment on the <code>_</code> that occurs in the
+                                                                    first column
+                                                                    of the division table (it denotes <i>infinity</i>).
+                                                                    <p>
+                                                                <li>
+                                                                    Study the multiplication table, and try to formulate
+                                                                    rules for
+                                                                    the multiplication of rationals.
+                                                            </ol>
+
+
+                                                            <h3><a name="1K."></a>
+                                                                <a href="#1: Numbers">1K. Review and Supplement</a>
+                                                                <a href="#S1K.">
+                                                                    <font size="-1">S1K.</font>
+                                                                </a>
+                                                            </h3>
+
+                                                            Using notation provided by a programming language (that
+                                                            will allow us to experiment with our math on a computer),
+                                                            we have introduced:<ol>
+                                                                <li>
+                                                                    The <i>counting numbers</i> <code>1 2 3 4</code>
+                                                                    etc.
+                                                                    <p>
+                                                                <li>The use of <i>lists</i> and of <i>names</i>
+                                                                    that are assigned <i>referents</i> by a
+                                                                    <i>copula</i>.<p>
+                                                                <li>
+                                                                    The <i>iteration</i> operator <code>for=: ^:</code>
+                                                                    that applies a function for a specified number of
+                                                                    times.<p>
+                                                                <li>
+                                                                    The function <i>addition</i>.<p>
+                                                                <li>Its <i>inverse</i> (<i>subtraction</i>).
+                                                                    <p>
+                                                                <li>The class of <i>integers</i> that includes
+                                                                    <i>zero</i>, and
+                                                                    the <i>negative numbers</i> <code>_1 _2 _3 _4</code>
+                                                                    etc.
+                                                                    introduced
+                                                                    by subtraction.
+                                                                    <p>
+                                                                <li>The <i>multiplication</i> that is given by iterated
+                                                                    addition.
+                                                                    <p>
+                                                                <li>The <i>division</i> that is inverse to
+                                                                    multiplication.
+                                                                    <p>
+                                                                <li>The <i>fractions</i> or <i>rationals</i> that are
+                                                                    introduced by
+                                                                    division.<p>
+                                                                <li>The <i>power</i> function and the <i>polynomials</i>
+                                                                    based upon it.
+                                                            </ol>
+                                                            Some of the assigned names (such as the <code>for</code>
+                                                            assigned by
+                                                            the expression <code>for=: ^:</code>) are "utilities" that
+                                                            will be utilized throughout the text,
+                                                            and are collected for easy reference in Appendix 1.<p>
+
+                                                                The pace of this text is brisk, moving on quickly to
+                                                                further topics
+                                                                as soon
+                                                                as the essential foundations for them are established.
+                                                                For example,
+                                                                although the Polynomials of Chapter 4 could provide a
+                                                                rich subject
+                                                                in itself, we pass on after a brief three pages to the
+                                                                Power Series
+                                                                of Chaper 5, and the Slope and Derivative of Chapter 6.
+
+                                                            <p>This gives a quick exposure to significant, and sometimes
+                                                                surprising,
+                                                                consequences of otherwise dull foundations. On the other
+                                                                hand, the
+                                                                reader
+                                                                may eventually (or immediately) want further treatments
+                                                                of the
+                                                                successive foundations: these are provided in a separate
+                                                                part of the
+                                                                book
+                                                                called Supplement.
+
+                                                            <p>In a printed text, the need to move between a given
+                                                                section and the
+                                                                corresponding supplemental section in a different part
+                                                                of the book
+                                                                might prove onerous. However, in reading the text from a
+                                                                computer
+                                                                (through
+                                                                a Browser), this switching back and forth is made by a
+                                                                click of a
+                                                                mouse.
+
+                                                            <p>For example, click on the S1K that appears to the right
+                                                                of the
+                                                                heading
+                                                                for this section to read the further discussion in the
+                                                                supplemental
+                                                                section S1K, and click on its heading to return.
+
+                                                            <p>The <i>Find</i> facility can be used as an index to find
+                                                                the
+                                                                occurrences of
+                                                                words in the text; invoke it by pressing F while
+                                                                holding down the control key, or select it from the
+                                                                Search menu.
+
+                                                            <h3><a name="1L."></a>
+                                                                <a href="#1: Numbers">1L. Notes</a>
+                                                                <a href="#S1L.">
+                                                                    <font size="-1">S1L.</font>
+                                                                </a>
+                                                            </h3>
+
+                                                            On page 75 Hogben says:<blockquote>
+                                                                <font size="-1">
+                                                                    <p>It may therefore be soothing for many to whom
+                                                                        mathematical expressions evoke a
+                                                                        malaise comparable to being seasick, if they
+                                                                        can learn to think of mathematics less as an
+                                                                        exploit in reasoning than as an exercise in
+                                                                        translating an unfamiliar script like Braille or
+                                                                        the Morse code.
+                                                                    <p>In this chapter we shall
+                                                                        therefore abandon the historical approach and
+                                                                        deal mainly with two topics: for what sort
+                                                                        of communication do we use this highly
+                                                                        space-saving " now international " written
+                                                                        language, and on what sort of signs do we
+                                                                        rely. To emphasize that the aim of this
+                                                                        chapter is to accustom the reader to approach
+                                                                        mathematical rules as Exercises in economical
+                                                                        translation, every rule in the sign
+                                                                        language of mathematics will have an
+                                                                        arithmetical
+                                                                        illustration "
+                                                                </font>
+                                                            </blockquote>
+                                                            <p>
+                                                                He continues with:
+                                                            <blockquote>
+                                                                <font size="-1">
+                                                                    <p>In contradistinction to common speech which
+                                                                        deals largely with the quality of things,
+                                                                        mathematics deals only with matters of size,
+                                                                        order, and shape. " First let us consider
+                                                                        what different sorts of signs go to the
+                                                                        making of a mathematical statement. We may
+                                                                        classify these as:
+                                                                    <ol>
+                                                                        <LI> punctuation;
+                                                                        <LI> models;
+                                                                        <LI> labels (e.g. 5 or x) for enumeration,
+                                                                            measurement, and
+                                                                            position in a sequence;
+                                                                        <LI> signs for relations;
+                                                                        <LI> signs for operations.
+                                                                    </ol>
+                                                                </font>
+                                                            </blockquote>
+                                                            <p>
+                                                                Conventional mathematical notation uses three
+                                                                pairs of symbols for punctuation: <code>( )</code>
+                                                                and <code>[ ]</code> and <code>{ }</code>. We will use
+                                                                only the
+                                                                pair <code>( )</code> for this purpose, and will use the
+                                                                others for operations: <code>{</code> for
+                                                                indexing (selection), <code>{.</code> and
+                                                                <code>}.</code> for
+                                                                take and drop of a
+                                                                first item, and <code>{:</code> and <code>}:</code> for
+                                                                take and drop of a last item.
+                                                            <p>Hogben offers the following suggestions for
+                                                                study:
+                                                            <blockquote>
+                                                                <font size="-1">
+                                                                    <p>Although care has been taken to see that all the
+                                                                        logical, or,
+                                                                        as we ought to say, the
+                                                                        grammatical rules are put in a continuous
+                                                                        sequence, you must
+                                                                        not expect that you will
+                                                                        necessarily follow every step in the argument
+                                                                        the first time
+                                                                        you read it. An eminent
+                                                                        Scottish mathematician gave a very sound piece
+                                                                        of advice for
+                                                                        lack of which many people
+                                                                        have been discouraged unnecessarily. "Every
+                                                                        mathematical book
+                                                                        that is worth
+                                                                        anything", said Chrystal, "must be read
+                                                                        backwards and forwards
+                                                                        ""
+                                                                    <p>---------------------
+                                                                    <p>"Always have a pen and paper, preferably squared
+                                                                        paper, in hand
+                                                                        ". when you read
+                                                                        the text for serious study, and work out all the
+                                                                        numerical
+                                                                        examples as you read ". What
+                                                                        you get out of the book depends on your
+                                                                        co-operation in the business of learning.
+                                                                </font>
+                                                            </blockquote>
+                                                            <p>To this we may add the advice to use the computer in the
+                                                                manner
+                                                                introduced in the
+                                                                next chapter, and illustrated throughout the entire
+                                                                text. In
+                                                                particular, do not
+                                                                hesitate to do any computer experiments that may occur
+                                                                to you " the
+                                                                worst that
+                                                                can happen is the appearance of an error message of some
+                                                                kind, after
+                                                                which you
+                                                                may continue without any special action.
+                                                            <p>
